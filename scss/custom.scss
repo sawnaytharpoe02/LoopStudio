@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&display=swap");
+
+$font-family-sans-serif: "Alata", sans-serif;
+$font-family-monospace: "Josefin Sans", sans-serif;
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$white-50: hsl(0, 0%, 55%);
+$secondary: hsl(0, 0%, 41%);
+
+.main-outer {
+	user-select: none;
+	position: relative;
+	overflow: hidden;
+	img.hero-img {
+		filter: brightness(0.6);
+	}
+	nav {
+		padding: 0 150px;
+	}
+
+	.intro {
+		width: 50%;
+		transform: translateY(-35%);
+		left: 150px;
+
+		p {
+			line-height: 0.95;
+			span {
+				display: block;
+				margin: 4px 0;
+			}
+		}
+	}
+}
+
+.navbar-custom li a {
+	color: $white;
+	font-size: 18px;
+}
+
+.navbar-custom li a:hover {
+	color: $white-50;
+}
+.vrMain-content {
+	padding: 100px 0;
+}
+.interactive-vr {
+	height: 500px;
+	width: 78%;
+	.vr-img {
+		width: 670px;
+		height: 100%;
+	}
+
+	.right-content {
+		height: 60%;
+
+		.vr-content {
+			width: 85%;
+			height: 75%;
+
+			.vr-paragraph {
+				font-size: 15px;
+			}
+		}
+	}
+}
+
+#vr-title {
+	position: relative;
+	span {
+		display: block;
+	}
+	span:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: white;
+		z-index: 1;
+		transform-origin: 100% 0;
+	}
+}
+
+.creationMain-content {
+	width: 78%;
+}
+
+.collection {
+	.collection-item {
+		height: 420px;
+		img {
+			filter: brightness(0.78);
+		}
+		p {
+			bottom: 0;
+			left: 50px;
+			bottom: 15px;
+			width: 65%;
+			line-height: 1.1;
+		}
+	}
+}
+
+footer {
+	margin-top: 100px;
+	.footer {
+		width: 78%;
+
+		.foot-left ul {
+			width: 90%;
+		}
+
+		.foot-right .social-icons {
+			width: 30%;
+		}
+	}
+}
+
+/* From uiverse.io */
+.seeAll {
+	display: inline-block;
+	padding: 8px 30px;
+	border: 2px solid $secondary;
+	transition: all 0.2s ease-in;
+	position: relative;
+	overflow: hidden;
+	font-size: 0.95rem;
+	color: black;
+	z-index: 1;
+	letter-spacing: 0.45rem;
+	background-color: transparent;
+	right: 0;
+}
+
+.seeAll:before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%) scaleY(1) scaleX(1.25);
+	top: 100%;
+	width: 140%;
+	height: 180%;
+	background-color: rgba(0, 0, 0, 0.05);
+	border-radius: 50%;
+	display: block;
+	transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+	z-index: -1;
+}
+
+.seeAll:after {
+	content: "";
+	position: absolute;
+	left: 55%;
+	transform: translateX(-50%) scaleY(1) scaleX(1.45);
+	top: 180%;
+	width: 160%;
+	height: 190%;
+	background-color: $white-50;
+	border-radius: 50%;
+	display: block;
+	transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+	z-index: -1;
+}
+
+.seeAll:hover {
+	color: #ffffff;
+	border: 2px solid $secondary;
+}
+
+.seeAll:hover:before {
+	top: -35%;
+	background-color: $secondary;
+	transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.seeAll:hover:after {
+	top: -45%;
+	background-color: $secondary;
+	transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+@media only screen and (max-width: 380px) {
+	.main-outer nav {
+		padding: 0;
+	}
+
+	.main-outer .intro {
+		width: 90%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.vrMain-content {
+		padding: 40px 0;
+	}
+	.interactive-vr {
+		width: 90%;
+	}
+	.interactive-vr .right-content .vr-content {
+		width: 100%;
+		height: 100%;
+	}
+	.creationMain-content {
+		width: 100%;
+	}
+	.collection .collection-item {
+		height: 120px;
+		margin-top: 25px;
+	}
+
+	.collection .collection-item p {
+		left: 35px;
+		bottom: 0px;
+		width: 40%;
+		line-height: 1.1;
+	}
+
+	.seeAll {
+		transform: translateX(-50%);
+		bottom: -80px;
+		padding: 8px 25px;
+		left: 50%;
+	}
+	footer .footer {
+		width: 90%;
+	}
+	footer .footer .foot-left ul {
+		width: 100%;
+	}
+	footer .footer .foot-right .social-icons {
+		width: 60%;
+	}
+}
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+$navbar-toggler-focus-width: none;
+$offcanvas-transition-duration: 0.2s;
+$btn-close-focus-shadow: none;
+$btn-close-hover-opacity: 1;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/navbar";
+@import "../node_modules/bootstrap/scss/nav";
+@import "../node_modules/bootstrap/scss/offcanvas";
+@import "../node_modules/bootstrap/scss/close";
+@import "../node_modules/bootstrap/scss/transitions";
+@import "../node_modules/bootstrap/scss/helpers";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "../node_modules/bootstrap/scss/utilities/api";
